@@ -1,0 +1,360 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  width: 320px;
+  max-width: 320px;
+  max-height: 560px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 14px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  color: #1f2430;
+  background: #fafafa;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.logo-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, #2563eb, #9333ea);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+h1 {
+  font-size: 15px;
+  margin: 0;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.master-toggle,
+.focus-toggle,
+.hide-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #4b5261;
+  flex-shrink: 0;
+}
+
+.focus-toggle {
+  background: #eef1ff;
+  border: 1px solid #dde2ff;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  align-items: flex-start;
+}
+
+.focus-toggle input {
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.isolate-banner {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 11.5px;
+  color: #1a56db;
+  background: #eaf1ff;
+  border: 1px solid #d3e2ff;
+  border-radius: 8px;
+  padding: 7px 9px;
+  margin-bottom: 10px;
+}
+
+.isolate-banner span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.clear-btn {
+  border: none;
+  background: #1a56db;
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 999px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.clear-btn:hover {
+  background: #143f9e;
+}
+
+.everything-else-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  font-size: 12.5px;
+  color: #4b5261;
+}
+
+.everything-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #9ca3af;
+  flex-shrink: 0;
+}
+
+.everything-name {
+  flex: 1;
+  font-weight: 600;
+}
+
+.solo-btn {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  color: #5f6368;
+  padding: 3px 7px;
+  border-radius: 999px;
+  flex-shrink: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.solo-btn:hover {
+  background: #f1f3f9;
+}
+
+.solo-btn.solo-active {
+  background: #e8f0fe;
+  color: #1a56db;
+  font-weight: 600;
+}
+
+#category-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.category-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 10px;
+  width: 100%;
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.category-card:hover {
+  border-color: #d7dbe3;
+  box-shadow: 0 2px 8px rgba(16, 24, 40, 0.07);
+}
+
+.category-card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Circular colour swatch instead of the default browser rectangle */
+.cat-color {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  border: 2px solid #fff;
+  outline: 1px solid #e5e7eb;
+  border-radius: 50%;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+  flex-shrink: 0;
+  overflow: hidden;
+  transition: transform 0.1s ease, outline-color 0.15s ease;
+}
+
+.cat-color:hover {
+  transform: scale(1.08);
+  outline-color: #b9c0cc;
+}
+
+.cat-color::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.cat-color::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
+}
+
+.cat-name {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 5px 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cat-name:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+.delete-btn {
+  border: none;
+  background: transparent;
+  color: #9aa1ac;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 4px;
+  flex-shrink: 0;
+  border-radius: 6px;
+}
+
+.delete-btn:hover {
+  color: #dc2626;
+  background: #fef2f2;
+}
+
+.keywords-box {
+  margin-bottom: 6px;
+  width: 100%;
+}
+
+.keyword-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 6px;
+  width: 100%;
+}
+
+.keyword-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #f1f3f9;
+  border-radius: 999px;
+  padding: 3px 8px 3px 10px;
+  font-size: 11px;
+  color: #374151;
+  max-width: 100%;
+}
+
+.keyword-chip span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 220px;
+}
+
+.keyword-chip button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #9aa1ac;
+  font-size: 11px;
+  line-height: 1;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.keyword-chip button:hover {
+  color: #dc2626;
+}
+
+.keyword-input {
+  width: 100%;
+  max-width: 100%;
+  border: 1px dashed #d1d5db;
+  border-radius: 6px;
+  padding: 5px 8px;
+  font-size: 12px;
+}
+
+.keyword-input:focus {
+  outline: none;
+  border-color: #6366f1;
+  border-style: solid;
+}
+
+.secondary-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 9px;
+  border-radius: 8px;
+  border: 1px dashed #9aa1ac;
+  background: transparent;
+  color: #4b5261;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.secondary-btn:hover {
+  background: #eef1ff;
+  border-color: #6366f1;
+  color: #4338ca;
+}
+
+.hint {
+  font-size: 10.5px;
+  color: #8a92a1;
+  margin-top: 12px;
+  line-height: 1.4;
+}
+
+/* Custom scrollbar so it never widens the popup */
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #d7dbe3;
+  border-radius: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent;
+}

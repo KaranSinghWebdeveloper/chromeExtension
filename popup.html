@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gmail Inbox Categorizer</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <div class="title-row">
+      <span class="logo-dot"></span>
+      <h1>Inbox Categorizer</h1>
+    </div>
+    <label class="master-toggle">
+      <input type="checkbox" id="enabled-toggle" />
+      <span>Enabled</span>
+    </label>
+  </header>
+
+  <div id="isolate-banner" class="isolate-banner" style="display:none">
+    <span id="isolate-banner-text"></span>
+    <button id="isolate-clear-btn" class="clear-btn">Clear</button>
+  </div>
+
+  <label class="focus-toggle">
+    <input type="checkbox" id="focus-toggle" />
+    <span>Focus mode - hide every tagged email, show only what's left</span>
+  </label>
+
+  <div class="everything-else-card">
+    <span class="dot everything-dot"></span>
+    <span class="everything-name">Everything else</span>
+    <button id="everything-solo-btn" class="solo-btn" title="Show only this">👁 Show only</button>
+  </div>
+
+  <section id="category-list"></section>
+
+  <button id="add-category-btn" class="secondary-btn">+ New category</button>
+
+  <template id="category-template">
+    <div class="category-card">
+      <div class="category-card-top">
+        <input type="color" class="cat-color" />
+        <input type="text" class="cat-name" placeholder="Category name" />
+        <button class="solo-btn" data-role="solo" title="Show only this category">👁</button>
+        <button class="delete-btn" title="Delete category">✕</button>
+      </div>
+      <div class="keywords-box">
+        <div class="keyword-chips"></div>
+        <input type="text" class="keyword-input" placeholder="Add keyword and press Enter (e.g. naukri)" />
+      </div>
+      <label class="hide-toggle">
+        <input type="checkbox" class="cat-hidden" />
+        <span>Hide this category in Gmail</span>
+      </label>
+    </div>
+  </template>
+
+  <p class="hint">
+    A category matches when a keyword appears anywhere in the sender name,
+    sender email, or subject line - case-insensitive. Use the 👁 button to
+    show only that category (or only "Everything else") and hide the rest.
+  </p>
+
+  <script src="popup.js"></script>
+</body>
+</html>

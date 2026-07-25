@@ -3,16 +3,27 @@
   "name": "Gmail Inbox Categorizer",
   "version": "1.0.0",
   "description": "Auto-tag Naukri, Indeed and other job-site emails in Gmail so client mail stands out. Hide whole categories with one click.",
-  "permissions": ["storage"],
-  "host_permissions": ["https://mail.google.com/*"],
+  "author": "Karan Singh",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://mail.google.com/*"
+  ],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": ["https://mail.google.com/*"],
-      "js": ["content.js"],
-      "css": ["content.css"],
+      "matches": [
+        "https://mail.google.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
       "run_at": "document_idle"
     }
   ],
